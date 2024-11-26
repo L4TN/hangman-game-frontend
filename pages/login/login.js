@@ -26,7 +26,7 @@ document.getElementById("btn-login").addEventListener("click", async function (e
 
         //http://127.0.0.1:8000/usuarios/login
         //https://hangman-game-backend.onrender.com/usuarios/login
-        const response = await fetch("http://127.0.0.1:8000/usuarios/login", {
+        const response = await fetch("https://hangman-game-backend.onrender.com/usuarios/loginn", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
