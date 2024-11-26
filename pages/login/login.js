@@ -23,8 +23,10 @@ document.getElementById("btn-login").addEventListener("click", async function (e
     }
 
     try {
-        debugger
-        const response = await fetch("https://hangman-game-backend.onrender.com/usuarios/login", {
+
+        //http://127.0.0.1:8000/usuarios/login
+        //https://hangman-game-backend.onrender.com/usuarios/login
+        const response = await fetch("http://127.0.0.1:8000/usuarios/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -42,7 +44,6 @@ document.getElementById("btn-login").addEventListener("click", async function (e
         const data = await response.json();
 
         if (response.ok) {
-            debugger
             // Salvar os campos retornados no localStorage
             if (data.data) {
                 for (const [key, value] of Object.entries(data.data)) {

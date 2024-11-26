@@ -116,4 +116,27 @@
   0px  2px 0 #000;  /* Contorno preto abaixo */
 }
 
+.errors-info {
+  font-size: 18px;
+  color: #7a0707;
+  margin-top: 10px;
+  /* Outros estilos conforme necessário */
+}
 
+/* Estiliza o container da forca */
+#forca-container {
+  position: relative;
+  z-index: 1; /* Valor menor */
+}
+
+/* Estiliza o display de erros para ficar na frente */
+#errors-display {
+  position: absolute;
+  z-index: 2; /* Valor maior para ficar na frente */
+  top: 50%; /* Ajuste conforme necessário */
+  left: 50%; /* Ajuste conforme necessário */
+  transform: translate(-50%, -400%); /* Centraliza o elemento */
+  background-color: rgba(235, 0, 0, 0.8); /* Fundo semi-transparente para melhor visibilidade */
+  padding: 10px;
+  border-radius: 5px;
+}

@@ -216,7 +216,6 @@ window.onclick = function(event) {
 };
 
 function changeUserIcon(iconSrc) {
-  debugger
 
   if(iconSrc === "../../img/usuario_sem_fundo.png")
     return

@@ -77,7 +77,9 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log("Enviando dados para iniciar o jogo:", { Tema_ID: parseInt(Tema_ID, 10), Nome, User_ID });
 
         try {
-            const response = await fetch("https://hangman-game-backend.onrender.com/game/start", {
+            //http://127.0.0.1:8000/game/start
+            //https://hangman-game-backend.onrender.com/game/start
+            const response = await fetch("http://127.0.0.1:8000/game/start", {
                 method: "POST",
                 headers: {
 
@@ -87,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
             const data = await response.json();
-            debugger
+
             if (response.ok) {
                 if (data.message === "Partida criada com sucesso") {
                     // Salvar as informações da partida no localStorage

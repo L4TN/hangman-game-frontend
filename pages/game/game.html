@@ -11,7 +11,6 @@
   <link rel="stylesheet" href="./game.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../css/responsividade.css">
 </head>
 
 <body>
@@ -98,6 +97,16 @@
       <img id="forca6" src="../../img/faroeste_forca6.png" alt="Forca" class="forca-img">
     </div>
 
+    <div id="errors-display" class="errors-info">Erros: 0 / 5</div>
+
+    <!-- Player Name -->
+<span class="player-name">Nome</span>
+
+<!-- Player Number -->
+<div id="player-number"></div>
+
+
+
     <!-- Div para a palavra a ser adivinhada, posicionada no centro da tela -->
     <div id="palavra-container" class="palavra-container">
       <!-- Letras da palavra serão inseridas aqui via JavaScript -->
@@ -162,246 +171,10 @@
     </div>
   </div>
 
-<!-- DIVS PARA O TEMA DE NATAL -->
 
-<div id="tema-natal" class="tema hidden">
-
-  <!-- Div para a forca, posicionada no canto direito, no meio -->
-  <div id="forca-container" class="forca-natal">
-    <img id="forca1" src="../../img/forca1_natal.png" alt="Forca" class="forca-img">
-    <img id="forca2" src="../../img/forca2_natal.png" alt="Forca" class="forca-img">
-    <img id="forca3" src="../../img/forca3_natal.png" alt="Forca" class="forca-img">
-    <img id="forca4" src="../../img/forca4_natal.png" alt="Forca" class="forca-img">
-    <img id="forca5" src="../../img/forca5_natal.png" alt="Forca" class="forca-img">
-    <img id="forca6" src="../../img/forca6_natal.png" alt="Forca" class="forca-img">
-  </div>
-
-  <!-- Div para a palavra a ser adivinhada, posicionada no centro da tela -->
-  <div id="palavra-container" class="palavra-container">
- 
-  </div>
-
-  <!-- Div para o cacto no canto inferior esquerdo -->
-  <div id="cacto-container">
-    <img src="../../img/cervo_natal1.gif" alt="Cacto do Faroeste" class="boneco-img">
-    <img src="../../img/cervo_natal.gif" alt="Cacto do Faroeste" class="cervo-img">
-  </div>
-
-  <!-- Tela de vitória ou derrota -->
-  <div id="vitoria-modal" class="modal hidden">
-    <div class="modal-content">
-      <div class="elementos-modal">
-        <img class="vitoria-ou-derrota" src="../../img/palavra_vitoria.png"></img>
-        <br>
-        <br>
-        <br>
-        <img class="tempo-decorrido" src="../../img/palavra_tempo.png"></img>
-      </div>
-      <p id="tempo-partida"></p>
-      <div class="botoes">
-        <button id="jogar-novamente">Jogar Novamente</button>
-        <button id="sair-jogo">Sair</button>
-      </div>
-  </div>
-</div>
-
-  <!-- Teclado Virtual -->
-  <div class="keyboard">
-    <div class="keyboard-row">
-      <button class="key" onclick="selectLetter('Q')">Q</button>
-      <button class="key" onclick="selectLetter('W')">W</button>
-      <button class="key" onclick="selectLetter('E')">E</button>
-      <button class="key" onclick="selectLetter('R')">R</button>
-      <button class="key" onclick="selectLetter('T')">T</button>
-      <button class="key" onclick="selectLetter('Y')">Y</button>
-      <button class="key" onclick="selectLetter('U')">U</button>
-      <button class="key" onclick="selectLetter('I')">I</button>
-      <button class="key" onclick="selectLetter('O')">O</button>
-      <button class="key" onclick="selectLetter('P')">P</button>
-    </div>
-    <div class="keyboard-row">
-      <button class="key" onclick="selectLetter('A')">A</button>
-      <button class="key" onclick="selectLetter('S')">S</button>
-      <button class="key" onclick="selectLetter('D')">D</button>
-      <button class="key" onclick="selectLetter('F')">F</button>
-      <button class="key" onclick="selectLetter('G')">G</button>
-      <button class="key" onclick="selectLetter('H')">H</button>
-      <button class="key" onclick="selectLetter('J')">J</button>
-      <button class="key" onclick="selectLetter('K')">K</button>
-      <button class="key" onclick="selectLetter('L')">L</button>
-    </div>
-    <div class="keyboard-row">
-      <button class="key" onclick="selectLetter('Z')">Z</button>
-      <button class="key" onclick="selectLetter('X')">X</button>
-      <button class="key" onclick="selectLetter('C')">C</button>
-      <button class="key" onclick="selectLetter('V')">V</button>
-      <button class="key" onclick="selectLetter('B')">B</button>
-      <button class="key" onclick="selectLetter('N')">N</button>
-      <button class="key" onclick="selectLetter('M')">M</button>
-    </div>
-  </div>
-</div>
-
-<!-- DIVS PARA O TEMA DE HALLOWEEN -->
-
-<div id="tema-halloween" class="tema hidden">
-
-  <!-- Div para a forca, posicionada no canto direito, no meio -->
-  <div id="forca-container" class="forca-halloween">
-    <img id="forca1" src="../../img/forca1_halloween.png" alt="Forca" class="forca-img">
-    <img id="forca2" src="../../img/forca2_halloween.png" alt="Forca" class="forca-img">
-    <img id="forca3" src="../../img/forca3_halloween.png" alt="Forca" class="forca-img">
-    <img id="forca4" src="../../img/forca4_halloween.png" alt="Forca" class="forca-img">
-    <img id="forca5" src="../../img/forca5_halloween.png" alt="Forca" class="forca-img">
-    <img id="forca6" src="../../img/forca6_halloween.png" alt="Forca" class="forca-img">
-  </div>
-
-  <!-- Div para a palavra a ser adivinhada, posicionada no centro da tela -->
-  <div id="palavra-container" class="palavra-container">
- 
-  </div>
-
-  <!-- Div para o cacto no canto inferior esquerdo -->
-  <div id="cacto-container">
-    <img src="../../img/pumpkinHallowenTheme_1.gif" alt="Cacto do Faroeste" class="gato-img">
-    <img src="../../img/pumpkinHallowenTheme_2.gif" alt="Cacto do Faroeste" class="abobora-img">
-  </div>
-
-  <div id="vitoria-modal" class="modal hidden">
-    <div class="modal-content">
-      <div class="elementos-modal">
-        <img class="vitoria-ou-derrota" src="../../img/palavra_vitoria.png"></img>
-        <br>
-        <br>
-        <br>
-        <img class="tempo-decorrido" src="../../img/palavra_tempo.png"></img>
-      </div>
-      <p id="tempo-partida"></p>
-      <div class="botoes">
-        <button id="jogar-novamente">Jogar Novamente</button>
-        <button id="sair-jogo">Sair</button>
-      </div>
-  </div>
-</div>
-
-  <!-- Teclado Virtual -->
-  <div class="keyboard">
-    <div class="keyboard-row">
-      <button class="key" onclick="selectLetter('Q')">Q</button>
-      <button class="key" onclick="selectLetter('W')">W</button>
-      <button class="key" onclick="selectLetter('E')">E</button>
-      <button class="key" onclick="selectLetter('R')">R</button>
-      <button class="key" onclick="selectLetter('T')">T</button>
-      <button class="key" onclick="selectLetter('Y')">Y</button>
-      <button class="key" onclick="selectLetter('U')">U</button>
-      <button class="key" onclick="selectLetter('I')">I</button>
-      <button class="key" onclick="selectLetter('O')">O</button>
-      <button class="key" onclick="selectLetter('P')">P</button>
-    </div>
-    <div class="keyboard-row">
-      <button class="key" onclick="selectLetter('A')">A</button>
-      <button class="key" onclick="selectLetter('S')">S</button>
-      <button class="key" onclick="selectLetter('D')">D</button>
-      <button class="key" onclick="selectLetter('F')">F</button>
-      <button class="key" onclick="selectLetter('G')">G</button>
-      <button class="key" onclick="selectLetter('H')">H</button>
-      <button class="key" onclick="selectLetter('J')">J</button>
-      <button class="key" onclick="selectLetter('K')">K</button>
-      <button class="key" onclick="selectLetter('L')">L</button>
-    </div>
-    <div class="keyboard-row">
-      <button class="key" onclick="selectLetter('Z')">Z</button>
-      <button class="key" onclick="selectLetter('X')">X</button>
-      <button class="key" onclick="selectLetter('C')">C</button>
-      <button class="key" onclick="selectLetter('V')">V</button>
-      <button class="key" onclick="selectLetter('B')">B</button>
-      <button class="key" onclick="selectLetter('N')">N</button>
-      <button class="key" onclick="selectLetter('M')">M</button>
-    </div>
-  </div>
-</div>
-
-<!-- DIVS PARA O TEMA DE MAR -->
-
-<div id="tema-mar" class="tema hidden">
-
-  <!-- Div para a forca, posicionada no canto direito, no meio -->
-  <div id="forca-container" class="forca-mar">
-    <img id="forca1" src="../../img/fundoDoMar_forca1.png" alt="Forca" class="forca-img">
-    <img id="forca2" src="../../img/fundoDoMar_forca2.png" alt="Forca" class="forca-img">
-    <img id="forca3" src="../../img/fundoDoMar_forca3.png" alt="Forca" class="forca-img">
-    <img id="forca4" src="../../img/fundoDoMar_forca4.png" alt="Forca" class="forca-img">
-    <img id="forca5" src="../../img/fundoDoMar_forca5.png" alt="Forca" class="forca-img">
-    <img id="forca6" src="../../img/fundoDoMar_forca6.png" alt="Forca" class="forca-img">
-  </div>
-
- <!-- Div para a palavra a ser adivinhada, posicionada no centro da tela -->
- <div id="palavra-container" class="palavra-container">
- 
- </div>
-
- <!-- Div para o cacto no canto inferior esquerdo -->
- <div id="mar-container">
-   <img src="../../img/arraia_mar.gif" alt="Cacto do Faroeste" class="arraia-img">
-   <img src="../../img/peixes_mar.gif" alt="Cacto do Faroeste" class="peixe-img">
- </div>
-
- <!-- Tela de vitória ou derrota -->
- <div id="vitoria-modal" class="modal hidden">
-   <div class="modal-content">
-     <div class="elementos-modal">
-       <img class="vitoria-ou-derrota" src="../../img/palavra_vitoria.png"></img>
-       <br>
-       <br>
-       <br>
-       <img class="tempo-decorrido" src="../../img/palavra_tempo.png"></img>
-     </div>
-     <p id="tempo-partida"></p>
-     <div class="botoes">
-       <button id="jogar-novamente">Jogar Novamente</button>
-       <button id="sair-jogo">Sair</button>
-     </div>
- </div>
-</div>
-
- <!-- Teclado Virtual -->
- <div class="keyboard">
-   <div class="keyboard-row">
-     <button class="key" onclick="selectLetter('Q')">Q</button>
-     <button class="key" onclick="selectLetter('W')">W</button>
-     <button class="key" onclick="selectLetter('E')">E</button>
-     <button class="key" onclick="selectLetter('R')">R</button>
-     <button class="key" onclick="selectLetter('T')">T</button>
-     <button class="key" onclick="selectLetter('Y')">Y</button>
-     <button class="key" onclick="selectLetter('U')">U</button>
-     <button class="key" onclick="selectLetter('I')">I</button>
-     <button class="key" onclick="selectLetter('O')">O</button>
-     <button class="key" onclick="selectLetter('P')">P</button>
-   </div>
-   <div class="keyboard-row">
-     <button class="key" onclick="selectLetter('A')">A</button>
-     <button class="key" onclick="selectLetter('S')">S</button>
-     <button class="key" onclick="selectLetter('D')">D</button>
-     <button class="key" onclick="selectLetter('F')">F</button>
-     <button class="key" onclick="selectLetter('G')">G</button>
-     <button class="key" onclick="selectLetter('H')">H</button>
-     <button class="key" onclick="selectLetter('J')">J</button>
-     <button class="key" onclick="selectLetter('K')">K</button>
-     <button class="key" onclick="selectLetter('L')">L</button>
-   </div>
-   <div class="keyboard-row">
-     <button class="key" onclick="selectLetter('Z')">Z</button>
-     <button class="key" onclick="selectLetter('X')">X</button>
-     <button class="key" onclick="selectLetter('C')">C</button>
-     <button class="key" onclick="selectLetter('V')">V</button>
-     <button class="key" onclick="selectLetter('B')">B</button>
-     <button class="key" onclick="selectLetter('N')">N</button>
-     <button class="key" onclick="selectLetter('M')">M</button>
-   </div>
- </div>
-</div>
 
   <!-- Scripts -->
   <script src="../../pages/game/game.js"></script>
+  
 </body>
 </html>
