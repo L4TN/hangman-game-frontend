@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
         try {
             //http://127.0.0.1:8000/game/start
             //https://hangman-game-backend.onrender.com/game/start
-            const response = await fetch("https://hangman-game-backend.onrender.com/game/start", {
+            const response = await fetch("http://127.0.0.1:8000/game/start", {
                 method: "POST",
                 headers: {
 
