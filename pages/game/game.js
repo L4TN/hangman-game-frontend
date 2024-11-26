@@ -1,6 +1,5 @@
 // gameCore.js
 
-// Envolvendo todo o código dentro do DOMContentLoaded para garantir que o DOM esteja carregado
 document.addEventListener("DOMContentLoaded", function () {
   let socket;
   let sessionId;
@@ -93,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Estabelece a conexão com WebSocket
   function connectWebSocket() {
-      socket = new WebSocket("ws://localhost:6789");
+      socket = new WebSocket("wss://hangman-game-backend.onrender.com");
 
       socket.onopen = () => {
           console.log("Conexão WebSocket estabelecida");
@@ -443,7 +442,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function handleGameOver(gameOverData) {
       console.log("Jogo Encerrado:", gameOverData.reason);
 
-      // Exibe o modal de vitória ou derrota
+      // Exibe o modal de vitória, derrota ou empate
       const vitoriaModal = document.getElementById("vitoria-modal");
       const resultadoElement = vitoriaModal.querySelector(".vitoria-ou-derrota");
       const tempoElement = document.getElementById("tempo-partida");
@@ -549,7 +548,7 @@ document.addEventListener("DOMContentLoaded", function () {
               session_id: sessionId,
               player_id: playerId,
               type: "use_power",
-              power: powerName
+              power: powerName === 'distraction' ? 'confuse' : powerName // Mapeia 'distraction' para 'confuse'
           };
           socket.send(JSON.stringify(message));
 
@@ -598,6 +597,16 @@ document.addEventListener("DOMContentLoaded", function () {
           }
           window.location.href = "../../index.html";
       };
+
+      // Botões do modal de vitória/derrota
+      document.getElementById("jogar-novamente").addEventListener("click", () => {
+          // Reinicia o jogo
+          location.reload();
+      });
+
+      document.getElementById("sair-jogo").addEventListener("click", () => {
+          window.exitGame();
+      });
   }
 
   // Função para alterar o tema e a música
